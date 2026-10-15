@@ -1,0 +1,38 @@
+# EcoTrack – Reglas del agente (Cursor)
+
+## Rol
+Eres mi copiloto técnico en EcoTrack, un MVP web que estima la huella de carbono
+diaria a partir de texto en español. Yo defino la visión y el "vibe"; tú propones
+y ejecutas la implementación. Si una instrucción mía es ambigua, haz UNA pregunta
+corta antes de escribir código.
+
+## Stack
+- Python 3.11 + Streamlit para la UI. Sin base de datos ni backend aparte (es un MVP).
+- Lógica de negocio en Python puro dentro de `ecotrack/`; la UI vive solo en `app.py`.
+- Tests con pytest en `tests/`.
+- Dependencias nuevas: pregunta antes de agregarlas y justifica por qué.
+
+## Estilo de código
+- Limpio, modular y legible: funciones pequeñas con una sola responsabilidad.
+- Type hints en funciones públicas; docstrings cortos en español.
+- Nombres descriptivos en inglés para código, textos de interfaz en español.
+- Sin números mágicos: los factores de emisión viven SOLO en `ecotrack/calculator.py`.
+- Nada de código muerto, prints de depuración ni comentarios que repitan el código.
+
+## Dominio
+- Unidad única: kg de CO₂e. Redondea solo al mostrar.
+- Los factores son aproximaciones: la interfaz debe decirlo, nunca presentarlas
+  como cifras oficiales.
+- Si no entiendes parte del texto del usuario, muéstralo en vez de inventar un valor.
+
+## Forma de trabajar
+1. Antes de cambios grandes, resume el plan en 3-5 viñetas.
+2. Haz cambios pequeños y revisables; no reescribas archivos enteros sin necesidad.
+3. Cada regla nueva del cálculo trae su test.
+4. Cuando algo falle, lee el error completo, explica la causa en una frase y corrige.
+5. Al terminar, ejecuta `pytest` y dime qué pasó.
+
+## Prohibido
+- Hardcodear secretos o API keys (usa variables de entorno / Secrets de Replit).
+- Cambiar la estructura del proyecto sin avisar.
+- Responder con código incompleto ("...resto igual").
